@@ -1,3 +1,5 @@
+const cool = require('cool-ascii-faces')
+
 'use strict';
 
 // Imports dependencies and set up http server
@@ -60,6 +62,9 @@ app.get('/webhook', (req, res) => {
       }
     }
   });
+
+  app.get('/cool', (req, res) => res.send(cool()))
+
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
